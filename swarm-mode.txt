@@ -1,0 +1,21 @@
+Tools
+	Ø Docker Compose
+	Ø Docker swarm mode
+	
+	Ø Compose
+		? To control multiple containers on a single system. It has a text file that describes app, which image to use, how many instances, n/w connections..etc
+	Ø Swarm mode
+		? Tells docker that you will be running many docker engines and you want to co-ordinate operations across all of 'em. Unlike compose, it not only describes app architecture. But also defines & mange high availability levels, scaling, load balancing…etc
+		? To initialize the swarm mode on docker host
+			Docker swarm init --advertise-addr $(hostname -i)
+		? To make the worker
+			Docker swarm join -- <the line that gets displayed when ran for swarm iniit>
+	
+		? Docker node ls
+			From manager - to see worker nodes
+		
+		? Docker stack deploy --compose-file=docker-stack.yml voting_stack
+		? Docker stack ls
+		? Docker stack services voting_stack
+		? Docker service ps voting_stack_vote
+		? Docker service scale voting_stack_vote=5
