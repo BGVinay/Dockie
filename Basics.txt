@@ -1,0 +1,29 @@
+Jargons
+	Images - file system and configuration of ur appln that r used to create containers
+		Docker image inspect alpine
+	Containers - running instances of images. Consist of application & its dependencies.
+			It shares the kernel and runs an isolated process in host OS
+			Docker run - to create 
+	Daemon - background service running on host that manages building, running & distributed running containers
+	Client - user to interact with daemon
+	Store - registry for images
+	
+commands
+	Ø Uname -a
+	Ø Docker container run hello-world
+		Ø Docker images
+		Ø Docker ps ( -a)
+	Ø Docker image pull alpine
+		Ø Docker images
+	Ø Docker container run alpine ls -l
+		Client finds the image, creates a container & then runs cmd inside it (ls -l). & then shuts down
+	Ø Docker container run alpine /bin/sh
+	Ø Docker container run -it alpine /bin/sh
+		Ls -l
+		Hostname
+		Exit
+	Ø Docker container ls (-a)
+		As said,each time the cmd was run in a diff container. So you can check which o=containers are running.
+	Ø Docker container start <container ID>
+		To run the container where you did the cmd execution, specific containers
+		Ø Docker container exec <container ID> ls
